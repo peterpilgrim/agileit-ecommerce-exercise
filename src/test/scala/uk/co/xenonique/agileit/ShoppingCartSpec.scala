@@ -28,6 +28,12 @@ class ShoppingCartSpec extends FlatSpec with Matchers {
   "Shopping cart" should "take a list of items as String text input" in {
     val cart1 = ShoppingCart.convert( List("Apple","orange","apple"))
     cart1.items should === (List(Apple(), Orange(), Apple()))
+
+    val cart2 = ShoppingCart.convert( List("orange","APPLE","Orange"))
+    cart2.items should === (List(Orange(), Apple(), Orange()))
+
+    val cart3 = ShoppingCart.convert( List())
+    cart3.items should === (List())
   }
 
 

@@ -16,7 +16,14 @@ class ShoppingCart(val items: List[CartItem] ) {
 object ShoppingCart {
   // Convert strings to Scala case classes
   def convert(cartItems: List[String]): ShoppingCart =  {
-    new ShoppingCart( List())
+    val list = cartItems.map{
+      name => name.toLowerCase() match  {
+        case "orange" => Orange()
+        case "apple" => Apple()
+        case _ => throw new RuntimeException("Sorry I don't know this product!")
+      }
+    }
+    new ShoppingCart( list)
   }
 
 }
