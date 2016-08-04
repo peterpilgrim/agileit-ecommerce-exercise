@@ -22,7 +22,7 @@ class DiscounterSpec extends FlatSpec with Matchers {
     new BuyTwoApplesGetOneFreeDiscounter().calculateDiscountPrice( List(Apple(),Apple())) should === (Apple().price)
   }
 
-  "Discounter" should "get 3 for the price of 2 on Oranges" in {
-    new BuyThreeOrangesForTwoDiscounter().calculateDiscountPrice( List(Orange(),Orange(),Orange())) should === (Orange().price * 2 )
+  "Discounter" should "discount for 3 for the price of 2 on Oranges" in {
+    new BuyThreeOrangesForTwoDiscounter().calculateDiscountPrice( List(Orange(),Orange(),Orange())) should === (Orange().price )
   }
 }

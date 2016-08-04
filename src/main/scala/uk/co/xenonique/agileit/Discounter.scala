@@ -29,7 +29,7 @@ class BuyThreeOrangesForTwoDiscounter extends Discounter {
   def calculateDiscountPrice(items: List[CartItem]): BigDecimal = {
     val n = items.filter(x => x.equals(Orange())).size
     if (n >= 3)
-      2 * n / 3 * Orange().price
+      n / 3 * Orange().price
     else
       0.0
   }
