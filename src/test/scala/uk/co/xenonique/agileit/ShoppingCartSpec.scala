@@ -18,10 +18,10 @@ class ShoppingCartSpec extends FlatSpec with Matchers {
 
   "Shopping cart" should "calculate price of items in a list" in {
     new ShoppingCart( List() ).price() should === (0.0)
-    new ShoppingCart( List( Orange()) ).price() should === (0.60)
-    new ShoppingCart( List( Apple()) ).price() should === (0.25)
-    new ShoppingCart( List( Orange(), Orange(), Apple()) ).price() should === (1.45)
-    new ShoppingCart( List( Orange(), Apple(), Orange()) ).price() should === (1.45)
+    new ShoppingCart( List( Orange()) ).price() should === (0.25)
+    new ShoppingCart( List( Apple()) ).price() should === (0.60)
+    new ShoppingCart( List( Orange(), Orange(), Apple()) ).price() should === (1.10)
+    new ShoppingCart( List( Orange(), Apple(), Orange()) ).price() should === (1.10)
     new ShoppingCart( List( Apple(), Orange(), Orange(), Apple()) ).price() should === (1.70)
   }
 
