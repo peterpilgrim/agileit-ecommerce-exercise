@@ -20,7 +20,7 @@ object ShoppingCart {
       name => name.toLowerCase() match  {
         case "orange" => Orange()
         case "apple" => Apple()
-        case _ => throw new RuntimeException("Sorry I don't know this product!")
+        case _ => throw new NoSuchElementException("Sorry I don't know this product!")
       }
     }
     new ShoppingCart( list)
