@@ -41,6 +41,7 @@ class ShoppingCartSpec extends FlatSpec with Matchers {
     new ShoppingCart( List( Orange(), Orange(), Apple()) ).price() should === (1.10)
     new ShoppingCart( List( Orange(), Apple(), Orange()) ).price() should === (1.10)
     new ShoppingCart( List( Apple(), Orange(), Orange(), Apple()) ).price() should === (1.70)
+    new ShoppingCart( List( Apple(), Apple(), Orange(), Apple()) ).price() should === (2.05)      /* !!! */
   }
 
   "Shopping cart" should "take a list of items as String text input" in {
@@ -58,6 +59,10 @@ class ShoppingCartSpec extends FlatSpec with Matchers {
     assertThrows[NoSuchElementException] {
       ShoppingCart.convert( List("Apple","DOG","CAT"))
     }
+  }
+
+  "Shopping cart" should "calculate price according to the example" in {
+    ShoppingCart.convert( List( "Apple", "Apple", "Orange", "Apple") ).price() should === (2.05)      /* !!! */
   }
 
   "Shopping cart" should "calculate two apples for one offer" in {
