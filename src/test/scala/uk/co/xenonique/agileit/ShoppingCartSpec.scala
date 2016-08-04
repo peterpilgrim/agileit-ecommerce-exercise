@@ -37,11 +37,9 @@ class ShoppingCartSpec extends FlatSpec with Matchers {
   }
 
   "Shopping cart" should "barf with unrecognisable input" in {
-
     assertThrows[NoSuchElementException] {
       ShoppingCart.convert( List("Apple","DOG","CAT"))
     }
-
   }
 
 }
