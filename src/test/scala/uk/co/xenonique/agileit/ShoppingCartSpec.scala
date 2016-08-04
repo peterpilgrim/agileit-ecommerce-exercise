@@ -16,12 +16,7 @@ import scala.collection.immutable.List
 @RunWith(classOf[JUnitRunner])
 class ShoppingCartSpec extends FlatSpec with Matchers {
 
-//  "List of cart items" should "be reversible" in {
-//    List(Orange(), Apple(), Apple()).reverse should === ( List(Apple(), Apple(), Orange()))
-//  }
-
   "Shopping cart" should "calculate price of items in a list" in {
-
     new ShoppingCart( List() ).price() should === (0.0)
     new ShoppingCart( List( Orange()) ).price() should === (0.60)
     new ShoppingCart( List( Apple()) ).price() should === (0.25)
