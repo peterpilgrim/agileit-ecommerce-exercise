@@ -6,8 +6,7 @@ package uk.co.xenonique.agileit
   * @author Peter Pilgrim (peter)
   */
 
-class ShoppingCart(val items: List[CartItem] ) {
-
+class ShoppingCart(val items: List[CartItem], discounters: List[Discounter] = List() ) {
 
   def price(): BigDecimal = items.map(x => x.price).sum;
 
@@ -15,7 +14,7 @@ class ShoppingCart(val items: List[CartItem] ) {
 
 object ShoppingCart {
   // Convert strings to Scala case classes
-  def convert(cartItems: List[String]): ShoppingCart =  {
+  def convert(cartItems: List[String] ): ShoppingCart =  {
     val list = cartItems.map{
       name => name.toLowerCase() match  {
         case "orange" => Orange()

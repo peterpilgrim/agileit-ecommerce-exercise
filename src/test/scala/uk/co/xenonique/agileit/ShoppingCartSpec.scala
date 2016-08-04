@@ -42,6 +42,18 @@ class ShoppingCartSpec extends FlatSpec with Matchers {
     }
   }
 
+  "Shopping cart" should "calculate two apples for one offer" in {
+
+    val discounters = List(new BuyTwoApplesGetOneFreeDiscounter())
+
+    new ShoppingCart(List(), discounters).price() should === (0.0)
+    new ShoppingCart(List(Apple()), discounters).price() should  === (0.60)
+    new ShoppingCart(List(Apple(), Apple()), discounters).price() should === (0.60)
+    new ShoppingCart(List(Apple(), Apple(), Apple()), discounters).price() should  === (1.20)
+    new ShoppingCart(List(Apple(), Apple(), Apple(), Apple()), discounters).price() should  === (1.20)
+    new ShoppingCart(List(Apple(), Apple(), Apple(), Apple(), Apple()), discounters).price() should === (1.80)
+    new ShoppingCart(List(Apple(), Apple(), Apple(), Apple(), Apple(), Apple()), discounters).price() should === (1.80)
+  }
 }
 
 
