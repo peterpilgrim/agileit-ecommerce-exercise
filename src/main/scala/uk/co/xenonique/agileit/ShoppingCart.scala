@@ -6,6 +6,8 @@ package uk.co.xenonique.agileit
   * @author Peter Pilgrim (peter)
   */
 
-class ShoppingCart {
+class ShoppingCart(val items: List[CartItem]) {
+
+  def price(): BigDecimal = 0.0;
 
 }
