@@ -21,8 +21,7 @@ libraryDependencies ++= Seq(
 )
 
 
-
-// mainClass in (Compile,run) := Some("uk.co.xenonique.client.timeout.ContentDemo")
+// mainClass in (Compile,run) := Some("uk.co.xenonique.agileit.XYZ")
 
 // fork a new JVM for 'run' and 'test:run'
 fork := true
