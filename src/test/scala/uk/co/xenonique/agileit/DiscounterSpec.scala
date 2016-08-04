@@ -18,8 +18,11 @@ import scala.collection.immutable.List
 @RunWith(classOf[JUnitRunner])
 class DiscounterSpec extends FlatSpec with Matchers {
 
-  "Discounter" should "buy one get one free on apples" in {
+  "Discounter" should "buy one get one free on Apples" in {
     new BuyTwoApplesGetOneFreeDiscounter().calculateDiscountPrice( List(Apple(),Apple())) should === (0.60)
   }
 
+  "Discounter" should "get 3 for the price of 2 on Oranges" in {
+    new BuyThreeOrangesForTwoDiscounter().calculateDiscountPrice( List(Orange(),Orange(),Orange())) should === (0.50)
+  }
 }
