@@ -23,6 +23,8 @@ out/*
 ###################
 .gradle
 SampleRunner
+target/*
+target
 build/*
 build
 classes/*.class
@@ -75,5 +77,4 @@ Thumbs.db
 # Ignore Front-End Packages #
 #############################
 node_modules
-
 
