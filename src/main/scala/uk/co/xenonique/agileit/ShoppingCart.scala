@@ -8,7 +8,13 @@ package uk.co.xenonique.agileit
 
 class ShoppingCart(val items: List[CartItem], discounters: List[Discounter] = List() ) {
 
-  def price(): BigDecimal = items.map(x => x.price).sum;
+  def price(): BigDecimal = {
+    val fullPrice = items.map(x => x.price).sum
+
+    val discountPrice = discounters.map(discounter => discounter.calculateDiscountPrice(items)).sum
+
+    fullPrice - discountPrice
+  }
 
 }
 
