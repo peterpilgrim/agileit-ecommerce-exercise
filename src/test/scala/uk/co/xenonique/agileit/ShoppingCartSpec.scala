@@ -22,7 +22,7 @@ class ShoppingCartSpec extends FlatSpec with Matchers {
 
   "Shopping cart" should "calculate price of items in a list" in {
 
-    new ShoppingCart( List() ).price() should === (1.0)
+    new ShoppingCart( List() ).price() should === (0.0)
   }
 }
 
